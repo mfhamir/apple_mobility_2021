@@ -14,20 +14,15 @@ library("dplyr")
 # data. The input to this will be the output of the previous script
 # namely the state csv files that were already subsetted
 
-# load in the dataset from the previous script 
+# load in the dataset from the previous script
 input_file_name <- "output/applemobilitytrends-2021-09-19_Kansas.csv"
 state_data <- read.csv(input_file_name)
 
 # starting off with dplyr chains
-count_of_cities_counties_by_transportation_type <- state_data %>%
+count_cities_counties_by_type <- state_data %>%
   select(geo_type, region, transportation_type) %>%
   group_by(geo_type, transportation_type) %>%
   tally()
 
-write.csv(count_of_cities_counties_by_transportation_type,
+write.csv(count_cities_counties_by_type,
           "output/ohio_cities_counties_counts.csv")
-
-
-
-
-
