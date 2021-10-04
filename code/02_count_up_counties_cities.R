@@ -28,7 +28,7 @@ count_by_type <- state_data %>%
 write.csv(count_by_type,
           "output/ohio_cities_counties_counts.csv")
 
-# for loop for counts of cities and counties - results of dpylr
+# counts of cities and counties - results of dpylr
 readr::write_csv(count_by_type, file = paste0("output/",
                                               "Subsetted_states/",
                                               tools::file_path_sans_ext(

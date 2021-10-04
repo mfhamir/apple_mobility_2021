@@ -14,15 +14,15 @@ source("code/functions/subset_mobility_ data_to_state.R")
 # assign input file name 
 input_file_name <- "data/raw_data/applemobilitytrends-2021-09-26.csv"
 
+#function
+subset_mobility_data_to_state(
+  input_file_name = "data/raw_data/applemobilitytrends-2021-09-19.csv",
+  state_to_subset = "Kansas")
+
 # use function within a for loop
-for (my_state in c("Alabama", "Arkansas", "Kansas", "Iowa", "Missouri")) {
+for (my_state in c("Alabama", "California", "Kansas", "Iowa", "New Jersey")) {
   subset_mobility_data_to_state(input_file_name, my_state)
   
   print(my_state)
   print("state has been subsetted by state from mobility dataset")
 }
-
-# test out the use of the function
-subset_mobility_data_to_state(
- input_file_name = "data/raw_data/applemobilitytrends-2021-09-19.csv",
- state_to_subset = "Kansas")
