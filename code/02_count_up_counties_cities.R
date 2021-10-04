@@ -24,6 +24,12 @@ count_by_type <- state_data %>%
   group_by(geo_type, transportation_type) %>%
   tally()
 
+# check subsetted data has data in it
+if (nrow(count_by_type) > 6) {
+  stop("ERROR, rows exceed data values created. Did you load the right 
+       subsetted file")
+}
+
 # write out the result of the dplyr chain
 write.csv(count_by_type,
           "output/ohio_cities_counties_counts.csv")
