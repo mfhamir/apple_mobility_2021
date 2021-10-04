@@ -19,11 +19,25 @@ input_file_name <- "output/applemobilitytrends-2021-09-19_Kansas.csv"
 state_data <- read.csv(input_file_name)
 
 # starting off with dplyr chains
-count_cities_counties_by_type <- state_data %>%
+count_by_type <- state_data %>%
   select(geo_type, region, transportation_type) %>%
   group_by(geo_type, transportation_type) %>%
   tally()
 
 # write out the result of the dplyr chain
-write.csv(count_cities_counties_by_type,
+write.csv(count_by_type,
           "output/ohio_cities_counties_counts.csv")
+
+# for loop for counts of cities and counties - results of dpylr
+readr::write_csv(count_by_type, file = paste0("output/",
+                                              "Subsetted_states/",
+                                              tools::file_path_sans_ext(
+                                                basename(
+                                                  input_file_name)
+                                              ),
+                                              "_",
+                                              "cities",
+                                              "_",
+                                              "counties",
+                                              "_",
+                                              ".csv"))
