@@ -15,35 +15,28 @@ library("dplyr")
 # namely the state csv files that were already subsetted
 
 # load in the dataset from the previous script
-input_file_name <- "output/applemobilitytrends-2021-09-19_Kansas.csv"
-state_data <- read.csv(input_file_name)
+countup_cities_counties_by_state <- function(input_file_name,
+                                              state_we_subset) {
+  
+all_data <- read.csv(input_file_name)
 
-# starting off with dplyr chains
-count_by_type <- state_data %>%
+state_data <- all_data[all_data$sub.region == state_we_subset, ]
+  
+  # check subsetted data has data in it
+  if (nrow(state_data) == 0) {
+    stop("ERROR, no rows matching data values created. Did you load the right 
+       subsetted file")
+  }
+  
+count_cities_counties_by_type <- state_data %>%
   select(geo_type, region, transportation_type) %>%
   group_by(geo_type, transportation_type) %>%
   tally()
 
-# check subsetted data has data in it
-if (nrow(count_by_type) > 6) {
-  stop("ERROR, rows exceed data values created. Did you load the right 
-       subsetted file")
+
+write.csv(state_data, file = paste0("output/Subsetted_states/",
+                                    basename(input_file_name),
+                                    "_",
+                                    state_we_subset,
+                                    ".csv"))
 }
-
-# write out the result of the dplyr chain
-write.csv(count_by_type,
-          "output/ohio_cities_counties_counts.csv")
-
-# counts of cities and counties - results of dpylr
-readr::write_csv(count_by_type, file = paste0("output/",
-                                              "Subsetted_states/",
-                                              tools::file_path_sans_ext(
-                                                basename(
-                                                  input_file_name)
-                                              ),
-                                              "_",
-                                              "cities",
-                                              "_",
-                                              "counties",
-                                              "_",
-                                              ".csv"))
