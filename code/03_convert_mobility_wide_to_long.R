@@ -18,10 +18,8 @@ states <- c("Delaware", "Alabama", "Nevada", "Ohio", "Texas")
 # test out the use of this function
 for (state in states) {
   convert_mobility_wide_to_long(
-    input_subsetted_mobility_data = paste0("output/subsetted_state/",
-                                           "applemobilitytrends-2021-09-07_",
+    input_subsetted_mobility_data = paste0("output/subsetted_states_long/",
                                            state,
                                            ".csv"),
-    state_to_subset = state
-  )
+    state_to_subset = state)
 }
