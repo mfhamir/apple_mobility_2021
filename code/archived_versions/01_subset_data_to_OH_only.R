@@ -7,11 +7,13 @@
 # Sept 8th, 2021
 
 # read in the compete csv file
-covid_data <- read.csv("data/raw_data/applemobilitytrends-2021-09-07.csv")
+covid_data <- readr::read_csv("data/raw_data/",
+                              "applemobilitytrends-2021-09-07.csv")
 
 # subset the dataset to only include the sub.region column has
 # "ohio" in it.
 ohio_data <- covid_data[covid_data$sub.region == "Ohio", ]
 
 # save the ohio data to a new csv file in the output directory
-write.csv(ohio_data, file = "output/ohio_apple_mobility_data.csv")
+readr::write_csv(ohio_data, file = "output/subsetted_states_wide/",
+                                   "ohio_apple_mobility_data.csv")
