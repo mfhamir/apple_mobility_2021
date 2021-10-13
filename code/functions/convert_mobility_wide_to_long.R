@@ -6,16 +6,15 @@
 # mfhamir@dons.usfca.edu
 
 # load the package "readr" and "tidyr"
-library(readr)
-library(tidyr)
+library("readr")
+library("tidyr")
 
 # we now want to convert the data from wide to long
 
 # continuing from the function that subsetted the mobility data to state
-convert_mobility_wide_to_long <- function(input_subsetted_mobility_data,
-                                          state_to_subset) {
+convert_to_long <- function(input_subsetted_data) {
   # read  in complete csv file
-  read_state <- readr::read_csv(input_subsetted_mobility_data)
+  read_state <- readr::read_csv(input_subsetted_data)
   # starting off with dplyr chains
   long_state_data <- tidyr::pivot_longer(read_state,
                                          cols = starts_with("202"),
@@ -31,7 +30,7 @@ convert_mobility_wide_to_long <- function(input_subsetted_mobility_data,
                                                   "subsetted_states_long/",
                                                   tools::file_path_sans_ext(
                                                     basename(
-                                                      input_subset_state_file)),
+                                                      input_subsetted_data)),
                                                   "_",
                                                   "long",
                                                   "_",
