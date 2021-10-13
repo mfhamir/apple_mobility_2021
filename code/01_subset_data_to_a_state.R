@@ -9,7 +9,7 @@
 # Sept 20th, 2021
 
 # load functions
-source("code/functions/subset_mobility_ data_to_state.R")
+source("code/functions/subset_mobility_data_to_state.R")
 
 # assign input file name 
 input_file_name <- "data/raw_data/applemobilitytrends-2021-09-26.csv"
