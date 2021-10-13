@@ -9,6 +9,7 @@
 library(readr)
 library(tidyr)
 
+
 # we would like to convert mobility data from wide to long
 
 source("code/functions/convert_mobility_wide_to_long.R")
@@ -16,10 +17,5 @@ source("code/functions/convert_mobility_wide_to_long.R")
 states <- c("Delaware", "Alabama", "Nevada", "Ohio", "Texas")
 
 # test out the use of this function
-for (state in states) {
-  convert_mobility_wide_to_long(
-    input_subsetted_mobility_data = paste0("output/subsetted_states_long/",
-                                           state,
-                                           ".csv"),
-    state_to_subset = state)
-}
+convert_to_long(
+    input_subsetted_data = "output/subsetted_states_wide/applemobilitytrends-2021-09-19_Kansas.csv")
