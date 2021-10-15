@@ -136,11 +136,11 @@ ggsave(plot = timeseries_plot,
 timeseries_plot
 ```
 
-```{r plot-tallied}
+```{r plot-tallied2}
 # create a grouped bar plot of the tallied data to include in the
 # knitted document and save that figure to the output
 # figures directory as a png file
-tallied_plot <- ggplot(data = long_subset,
+tallied_plot2 <- ggplot(data = long_subset,
                        aes(x = geo_type,
                            y = relative_mobility,
                            fill = transportation_type)) +
@@ -157,7 +157,7 @@ ggsave(plot = tallied_plot,
                          "_",
                          states_no_spaces,
                          "_long_plot.png"))
-tallied_plot
+tallied_plot2
 ```
 
 ## Session info
