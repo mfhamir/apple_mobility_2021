@@ -110,7 +110,7 @@ tallied_plot
 ```
 
 ```{r plot-time series}
-# create a timeseries plot of the mean relative driving mobility across the state
+# create a timeseries plot of the mean
 # with date on the x axis and mean relative mobility on the y axis
 # figures directory as a png file
 timeseries_plot <- long_subset %>%
@@ -166,5 +166,4 @@ sessionInfo()
 
 ### Sources Cited
 ```{r}
-
 ```
