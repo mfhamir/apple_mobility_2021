@@ -1,4 +1,4 @@
-load("dplyr") 
+load("dplyr")
 
 source("code/functions/tally_state_cities_counties.R")
 

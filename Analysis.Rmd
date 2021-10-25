@@ -38,7 +38,6 @@ library("readr")
 library("ggplot2")
 library("tidyr")
 library("lubridate")
-library("devtools")
 
 # load functions needed
 source("code/functions/subset_mobility_data_to_state.R")
@@ -162,7 +161,7 @@ tallied_plot2
 
 ## Session info
 ```{r session info}
- devtools::session_info()
+sessionInfo()
 ```
 
 ### Sources Cited
