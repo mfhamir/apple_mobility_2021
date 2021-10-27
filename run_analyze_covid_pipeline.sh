@@ -13,7 +13,7 @@
 if [ $# -eq 0 ]
 then
  echo "To run this script, supply two arguments:"
- echo "The first is the path to the mobility data file"
+ echo "The first is the name of the state"
  echo "the second is the path to the mobility data csv file"
  exit 1
 fi
