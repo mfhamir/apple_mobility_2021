@@ -137,17 +137,17 @@ timeseries_plot
 
 ```{r plot-tallied2}
 # create a grouped bar plot of the tallied data to include in the
-# knitted document and save that figure to the output
+# long subset data and save that figure to the output
 # figures directory as a png file
 tallied_plot2 <- ggplot(data = long_subset,
                        aes(x = geo_type,
                            y = relative_mobility,
                            fill = transportation_type)) +
   geom_col(position = position_dodge()) +
-  labs(title = paste("Number of cities and/or counties in",
+  labs(title = paste("Relative mobility",
                      state_to_analyze,
-                     "with relative mobility"),
-       x = "Type of area",
+                     "in different cities/counties"),
+       x = "Area type",
        y = "Relative mobility")
 
 ggsave(plot = tallied_plot,
