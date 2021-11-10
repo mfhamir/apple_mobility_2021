@@ -12,7 +12,7 @@ It currently uses dplyr to work with some of the tabular data. Eventually, it wi
 
 ### Change Log
 
-*2021-10-25: Parameterize Rmd and add bash script to drive knitting
+*2021-10-25: Parameterize Rmd update and add bash script to drive knitting
 *2021-10-10: I had an issue with my 03 and convert to long, the date was reading wrongly so I altered my laptop date to read year first. problem has been fixed.
 *2021-10-04: for the 02 script, i have shown specific details by ty[e fpr the state of Kansas.
 *2021-10-04: added for loops to both 01 and 02 scripts. push commits manually.

@@ -159,7 +159,7 @@ ggsave(plot = tallied_plot,
 tallied_plot2
 ```
 
-## Session info
+### Session info
 ```{r session info}
 sessionInfo()
 ```
