@@ -1,11 +1,11 @@
-STATE		:= Alambama
+STATE		:= Alabama
 SPACE		:= $() $()
 STATE_NOSPACE	:= $( subst $(SPACE),_,$(STATE))
 REPORT		:= Analysis_$(STATE_NOSPACE).html
 OUTPUT		:= output
 REPORT_PATH	:= $(OUTPUT)/$(REPORT)
 R_FUNCTIONS	:= $(wildcard code/functions/*.R)
-MOBILITTY_DATA	:= data/raw_Data/applemobilitytrends-2021-09-19.csv
+MOBILITY_DATA	:= data/raw_data/applemobilitytrends-2021-10-09.csv
 SEQ_DATA	:= /blast-db/sars-cov-2-seq-data/2021-10-24_ncbi_sars_cov2_sequences.fasta.gz
 SEQ_SUMMARY	:= $(OUTPUT)/sequence_summary.txt
 
