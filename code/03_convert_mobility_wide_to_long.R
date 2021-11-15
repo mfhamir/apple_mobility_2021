@@ -18,4 +18,5 @@ states <- c("Delaware", "Alabama", "Nevada", "Ohio", "Texas")
 
 # test out the use of this function
 convert_to_long(
-    input_subsetted_data = "output/subsetted_states_wide/applemobilitytrends-2021-09-19_Kansas.csv")
+    input_subsetted_data = "output/subsetted_states_wide/",
+    "applemobilitytrends-2021-09-19_Kansas.csv")

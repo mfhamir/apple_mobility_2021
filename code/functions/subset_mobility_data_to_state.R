@@ -18,7 +18,7 @@ subset_mobility_data_to_state <- function(input_file_name,
  # the state name in it. but we want all columns.
  state_data <- covid_data %>%
     dplyr::filter(`sub-region` == state_to_subset)
- 
+
  # sanitze state name for output files
  states_no_spaces <- gsub(state_to_subset,
                           pattern = " ",

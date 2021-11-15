@@ -4,6 +4,10 @@ author: "Muhammed Hamir"
 date: "10/10/2021"
 output: html_document
 bibliography: references.bib
+params:
+  state: "Alabama"
+  data: "data/raw_data/applemobilitytrends-2021-10-09.csv"
+  
 ---
 
 ```{r setup, include=FALSE}
@@ -13,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE, message = TRUE)
 ## Setup
 
 ```{r set-parameters}
-state_to_analyze <- "Alabama"
+state_to_analyze <- params$state
 
 # sanitizing the state name for output files
 states_no_spaces <- gsub(state_to_analyze,
@@ -21,7 +25,7 @@ states_no_spaces <- gsub(state_to_analyze,
                          replacement = "_")
 
 # set the name of the global data file to use
-global_file_to_process <- "data/raw_data/applemobilitytrends-2021-10-09.csv"
+global_file_to_process <- params$data
 
 # extract core name for output file naming use
 core_name <- tools::file_path_sans_ext(basename(global_file_to_process))
@@ -34,7 +38,6 @@ library("readr")
 library("ggplot2")
 library("tidyr")
 library("lubridate")
-library("devtools")
 
 # load functions needed
 source("code/functions/subset_mobility_data_to_state.R")
@@ -107,7 +110,7 @@ tallied_plot
 ```
 
 ```{r plot-time series}
-# create a timeseries plot of the mean relative driving mobility across the state
+# create a timeseries plot of the mean
 # with date on the x axis and mean relative mobility on the y axis
 # figures directory as a png file
 timeseries_plot <- long_subset %>%
@@ -132,11 +135,11 @@ ggsave(plot = timeseries_plot,
 timeseries_plot
 ```
 
-```{r plot-tallied}
+```{r plot-tallied2}
 # create a grouped bar plot of the tallied data to include in the
 # knitted document and save that figure to the output
 # figures directory as a png file
-tallied_plot <- ggplot(data = long_subset,
+tallied_plot2 <- ggplot(data = long_subset,
                        aes(x = geo_type,
                            y = relative_mobility,
                            fill = transportation_type)) +
@@ -153,15 +156,14 @@ ggsave(plot = tallied_plot,
                          "_",
                          states_no_spaces,
                          "_long_plot.png"))
-tallied_plot
+tallied_plot2
 ```
 
 ## Session info
 ```{r session info}
- devtools::session_info()
+sessionInfo()
 ```
 
 ### Sources Cited
 ```{r}
-
 ```

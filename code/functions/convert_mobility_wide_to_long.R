@@ -20,11 +20,7 @@ convert_to_long <- function(input_subsetted_data) {
                                          cols = starts_with("202"),
                                          names_to = "date",
                                          values_to = "relative_mobility")
-                                       
-  # check that the subsetted data actually has data in it
-  # is (nrow(count_cities_countries) == 0) {
-  # stop("ERROR: no rows matching given state name. Did you make a mistake?")
-  
+
   # save the state data to a new csv file in the output directory
   readr::write_csv(long_state_data, file = paste0("output/",
                                                   "subsetted_states_long/",

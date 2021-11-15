@@ -12,7 +12,7 @@ source("code/02_count_up_counties_cities.R")
 #For a single state
 countup_cities_counties_by_state(
   input_file_name = "Data/Raw_Data/applemobilitytrends-2021-09-26.csv",
-  state_we_subset = "Delaware" )
+  state_we_subset = "Delaware")
 
 
 # For multiple states

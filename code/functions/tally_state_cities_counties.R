@@ -16,7 +16,7 @@ library("dplyr")
 
 # load in the dataset from the previous script
 tally_state_cities_counties <- function(input_state_file) {
-  
+
   state_data <- readr::read_csv(input_state_file)
 
   # starting off with dplyr chains
@@ -27,7 +27,7 @@ tally_state_cities_counties <- function(input_state_file) {
 
   # check subsetted data has data in it
   if (nrow(count_by_type) > 6) {
-    stop("ERROR, rows exceed data values created. Did you load the right 
+    stop("ERROR, rows exceed data values created. Did you load the right
          subsetted file")
   }
   # write out the result of the dplyr chain
