@@ -12,21 +12,25 @@ if [ $# -eq 0 ]
 then
   echo "To run this script, supply two arguments"
   echo "Supply the path to the grip compressed SARS-Cov2 fasta file"
-  echo "For aditional outpu, add 'ALL' as the second argument"
+  echo "For aditional output, add 'ALL' as the second argument"
   exit 1
 fi
 
-if [ $# -eq 2 ] && [ "$2 = ALL ] ;
-then print
-  echo "The total number sequencesin the file:"
-  bioawk -c fastx '{print $name $comment}' "$1" | wc -1
+if [[ $# -eq 1 ]]
+then
+  bioawk -c fastx '{print $comment}' "$1" | cut -d "|" -f 21 | sort | uniq -c | sort -n -r
+  exit 1
+fi 
+
+elif [ $# -eq 2 ] && [[ "$2" == "ALL" ]]
+then
+  echo "The total number sequences in the file:"
+  bioawk -c fastx '{print $name $comment}' "$1" | wc -l
   echo "This would be the total number of Sars-Cov-2 sequences per country, this will be"
-  bioawk -c fastx '{print $comment}' "$1"  |  cut -d " | " -f 21  |  sort  | uniq -c  | sort -n -r
+  bioawk -c fastx '{print $comment}' "$1" | cut -d "|" -f 21 | sort | uniq -c | sort -n -r
   exit 1
-fi
 
-if [ $# -eq 1 ] ;
-then print
-  bioawk -c fastx '{print $comment}' "$1"  | cut -d " | " -f 21 | sort | uniq -c | sort -n -r
-exit 1
+else
+  echo "ERROR: check through file for errors"
+  exit 1
 fi
