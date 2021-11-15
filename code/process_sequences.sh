@@ -1,5 +1,5 @@
+#!/bin/bash
 # This is the pathway to compress the file into a command line argument
-
 # Muhammed Hamir
 # mfhamir@dons.usfca.edu
 # November 08 2021
@@ -22,7 +22,7 @@ then
   exit 1
 fi 
 
-elif [ $# -eq 2 ] && [[ "$2" == "ALL" ]]
+if [ $# -eq 2 ] && [ "$2" = "ALL" ]
 then
   echo "The total number sequences in the file:"
   bioawk -c fastx '{print $name $comment}' "$1" | wc -l
