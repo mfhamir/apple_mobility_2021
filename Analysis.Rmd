@@ -7,7 +7,7 @@ bibliography: references.bib
 params:
   state: "Alabama"
   data: "data/raw_data/applemobilitytrends-2021-10-09.csv"
-  seqdata:output/sequence_summary.txt 
+  seqdata: "output/sequence_summary.txt" 
 ---
 
 ```{r setup, include=FALSE}
@@ -191,4 +191,3 @@ sessionInfo()
 
 ### Sources Cited
 ```{r}
-`
