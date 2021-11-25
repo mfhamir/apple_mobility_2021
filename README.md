@@ -12,6 +12,8 @@ It currently uses dplyr to work with some of the tabular data. Eventually, it wi
 
 ### Change Log
 
+*2021-11-22: Cleaned code, moved extra files to archived functions and renamed code
+*2021-11-22: 02 script is correctly labelled 
 *2021-11-10: Plot title/detail updated also knitting errors cleared
 *2021-10-25: Parameterize Rmd update and add bash script to drive knitting
 *2021-10-10: I had an issue with my 03 and convert to long, the date was reading wrongly so I altered my laptop date to read year first. problem has been fixed.
