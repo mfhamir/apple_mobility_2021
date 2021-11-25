@@ -11,8 +11,7 @@
 
 if [ $# -eq 0 ]
 then
-  echo "To run this script, supply two arguments"
-  echo "Supply the path to the grip compressed SARS-Cov2 fasta file"
+  echo "Supply the path to the gzip compressed SARS-Cov2 fasta file"
   echo "For aditional output, add 'ALL' as the second argument"
   exit 1
 fi
@@ -22,9 +21,10 @@ fi
 # sequence count.
 if [[ $# -eq 1 ]]
 then
+  echo "count of sequences per country, sorted from the greatest to least"
   bioawk -c fastx '{print $comment}' "$1" | cut -d "|" -f 21 | sort | uniq -c | sort -n -r
   exit 0
-fi 
+fi
 
 if [ $# -eq 2 ] && [ "$2" = "ALL" ]
 then
