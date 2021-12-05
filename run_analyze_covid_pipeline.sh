@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 # A bash script to drive the rendering of a Rmarkdown file using some
 # parameters passed in from the shell
 # This script expects two command line parameters
@@ -15,14 +17,14 @@ then
  echo "To run this script, supply two arguments:"
  echo "The first is the name of the state"
  echo "the second is the path to the mobility data csv file"
+ echo "the third is the path to the sequence summary report text file."
  exit 1
 fi
 
 state=$1
 state=${state// /_}
 
-Rscript -e "rmarkdown::render('Analysis.Rmd',\
-            params = list(state= '$1',\
-            data = '$2'),\
-            output_dir = 'output',\
-            output_file = 'Analysis_$state')"
+RMD_PARAMS="params = list(state = '$1', data = '$2', seqdata = '$3')"
+RMD_OUTPUT="output_dir = 'output', output_file = 'Analysis_$state'"
+
+Rscript -e "rmarkdown::render('Analysis.Rmd', $RMD_PARAMS, $RMD_OUTPUT)"
