@@ -12,7 +12,7 @@
 if [ $# -eq 0 ]
 then
   echo "Supply the path to the gzip compressed SARS-Cov2 fasta file"
-  echo "For aditional output, add 'ALL' as the second argument"
+  echo "For additional output, add 'ALL' as the second argument"
   exit 1
 fi
 
