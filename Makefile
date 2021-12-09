@@ -1,3 +1,4 @@
+
 STATE		:= Alabama
 SPACE		:= $() $()
 STATE_NOSPACE	:= $( subst $(SPACE),_,$(STATE))
