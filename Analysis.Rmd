@@ -165,5 +165,3 @@ sessionInfo()
 ```
 
 ### Sources Cited
-```{r}
-```
