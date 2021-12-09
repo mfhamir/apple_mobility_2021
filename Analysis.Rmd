@@ -190,4 +190,3 @@ sessionInfo()
 ```
 
 ### Sources Cited
-```{r}
