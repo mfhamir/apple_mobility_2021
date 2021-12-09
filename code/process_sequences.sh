@@ -33,3 +33,4 @@ then
   echo "This would be the total number of Sars-Cov-2 sequences per country, this will be"
   bioawk -c fastx '{print $comment}' "$1" | cut -d "|" -f 21 | sort | uniq -c | sort -n -r
   exit 0
+fi
