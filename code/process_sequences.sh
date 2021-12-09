@@ -23,3 +23,5 @@ fi
 
 bioawk -c fastx '{print $name $comment}' "$1" | wc -l
 bioawk -c fastx '{print $comment}' "$1"| cut -d "|" -f 21 | sort | uniq -c | sort -n -r
+exit 1
+fi
