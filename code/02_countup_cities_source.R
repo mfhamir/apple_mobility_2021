@@ -7,13 +7,7 @@
 # mfhamir@dons.usfca.edu
 
 # test out the function
-source("code/archived_versions/count_up_counties_cities.R")
-
-#For a single state
-countup_cities_counties_by_state(
-  input_file_name = "Data/Raw_Data/applemobilitytrends-2021-09-26.csv",
-  state_we_subset = "Delaware")
-
+source("code/functions/tally_state_cities_counties.R")
 
 # For multiple states
 for (the_state in c("Delaware", "Maryland", "Idaho", "Arizona", "Iowa")) {
