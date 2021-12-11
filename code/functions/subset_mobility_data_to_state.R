@@ -11,6 +11,8 @@
 # that is subsetted
 subset_mobility_data_to_state <- function(input_file_name,
                                           state_to_subset) {
+ # We will need the dplyr package to help us subset the data by state
+library("dplyr")
  # read in the compete csv file
  covid_data <- readr::read_csv(file = input_file_name)
 
