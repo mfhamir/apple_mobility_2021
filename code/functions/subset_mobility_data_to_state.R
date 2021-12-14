@@ -6,15 +6,14 @@
 # mfhamir@dons.usfca.edu
 # Sept 20th, 2021
 
+# load packages
+library("dplyr")
+library("readr")
 # create a function to subset any US state out of the full dataset
 # this should also create an output CSV file that is named based on the state
 # that is subsetted
 subset_mobility_data_to_state <- function(input_file_name,
-
                                           state_to_subset) {
- # We will need to load the dplyr package to help us subset the data by state
- # This will help people to run the scripts and project easier
-library("dplyr")
  # read in the compete csv file
  covid_data <- readr::read_csv(file = input_file_name)
 
@@ -42,4 +41,3 @@ library("dplyr")
                                             states_no_spaces,
                                             ".csv"))
 }
-
