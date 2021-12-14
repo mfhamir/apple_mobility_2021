@@ -20,4 +20,3 @@ for (the_state in c("output/applemobilitytrends-2021-09-26_Alabama.csv",
   print(the_state)
   print("State data has been tallied")
 }
-
