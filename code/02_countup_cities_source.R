@@ -1,23 +1,23 @@
-# This is the source script that runs each and every state using a loop and
-# produces a data set that accounts for the count of counties and cities by
-# type
+# The main goal of this script will be to use the dplyr packages to count
+# up the number of cities and counties in each given state that is provided and
+# then return a csv.
 
 # Muhammed Hamir
 # october 6th, 2021
 # mfhamir@dons.usfca.edu
 
-# test out the function
+# load function
 source("code/functions/tally_state_cities_counties.R")
 
-#For a single state
-countup_cities_counties_by_state(
-  input_file_name = "Data/Raw_Data/applemobilitytrends-2021-09-26.csv",
-  state_we_subset = "Delaware")
+# use function in for loop
+for (the_state in c("output/applemobilitytrends-2021-09-26_Alabama.csv",
+                   "output/applemobilitytrends-2021-09-26_Maryland.csv",
+                   "output/applemobilitytrends-2021-09-26_Idaho.csv",
+                   "output/applemobilitytrends-2021-09-26_Arizona.csv",
+                   "output/applemobilitytrends-2021-09-26_Iowa.csv")) {
+  tally_state_cities_counties(the_state)
 
-
-# For multiple states
-for (the_state in c("Delaware", "Maryland", "Idaho", "Arizona", "Iowa")) {
-  print(countup_cities_counties_by_state(
-    input_file_name = "data/raw_data/applemobilitytrends-2021-09-26.csv",
-    state_we_subset = the_state))
+  print(the_state)
+  print("State data has been tallied")
 }
+
