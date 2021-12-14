@@ -11,9 +11,6 @@
 # load functions
 source("code/functions/subset_mobility_data_to_state.R")
 
-# assign input file name
-input_file_name <- "data/raw_data/applemobilitytrends-2021-09-26.csv"
-
 #function
 subset_mobility_data_to_state(
   input_file_name = "data/raw_data/applemobilitytrends-2021-09-19.csv",
