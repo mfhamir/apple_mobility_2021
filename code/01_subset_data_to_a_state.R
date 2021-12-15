@@ -11,7 +11,7 @@
 # load functions
 source("code/functions/subset_mobility_data_to_state.R")
 
-#function
+# Test function within single state
 subset_mobility_data_to_state(
   input_file_name = "data/raw_data/applemobilitytrends-2021-09-19.csv",
   state_to_subset = "Alabama")
