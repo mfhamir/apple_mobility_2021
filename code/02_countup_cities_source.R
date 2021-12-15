@@ -6,17 +6,22 @@
 # october 6th, 2021
 # mfhamir@dons.usfca.edu
 
+#load package "dplyr"
+library("dplyr")
 # load function
 source("code/functions/tally_state_cities_counties.R")
 
 # use function in for loop
-for (the_state in c("output/applemobilitytrends-2021-09-26_Alabama.csv",
-                   "output/applemobilitytrends-2021-09-26_Maryland.csv",
-                   "output/applemobilitytrends-2021-09-26_Idaho.csv",
-                   "output/applemobilitytrends-2021-09-26_Arizona.csv",
-                   "output/applemobilitytrends-2021-09-26_Iowa.csv")) {
-  tally_state_cities_counties(the_state)
+the_state <- c("Alabama","Maryland", "Idaho", "Arizona", "Iowa")
 
-  print(the_state)
-  print("State data has been tallied")
+# test out the use of the function
+for (state in the_state) {
+  tally_state_cities_counties(
+    input_state_file = paste0("output/subsetted_states_wide/",
+                                  "applemobilitytrends-2021-09-26_",
+                                  state,
+                                  ".csv"),
+     state_to_subset = state
+)
 }
+

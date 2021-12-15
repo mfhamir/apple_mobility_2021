@@ -6,16 +6,17 @@
 # September 27th 2021
 # mfhamir@dons.usfca.edu
 
-# load the package "dplyr"
+# load the package "dplyr" and "readr"
 library("dplyr")
-
+library("readr")
 # we would like to get the count of the number of cities and the
 # number of counties in a given state that have driving mobility
 # data. The input to this will be the output of the previous script
 # namely the state csv files that were already subsetted
 
 # load in the dataset from the previous script
-tally_state_cities_counties <- function(input_state_file) {
+tally_state_cities_counties <- function(input_state_file,
+					state_to_subset) {
 
   state_data <- readr::read_csv(input_state_file)
 
@@ -42,4 +43,5 @@ tally_state_cities_counties <- function(input_state_file) {
                                                 "_",
                                                 "cities",
                                                 ".csv"))
+  return(count_by_type)
 }
