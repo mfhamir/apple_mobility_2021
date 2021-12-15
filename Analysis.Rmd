@@ -84,7 +84,7 @@ tallied_subset <- tally_state_cities_counties(
 ```
 
 
-## figures 
+## Figures 
 ```{r plot-tallied}
 # create a grouped bar plot of the tallied data to include in the
 # knitted document and save that figure to the output
