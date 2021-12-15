@@ -21,9 +21,9 @@ $(SEQ_SUMMARY): code/process_sequences.sh $(SEQ_DATA)
 clean:
 	rm -fv output/*.html
 	rm -fv Analysis.html
-	rm -fv Output/*summary.txt
-	rm -fv Output/*/*.csv
-	rm -fv Output/*/*.png
+	rm -fv output/*summary.txt
+	rm -fv output/*/*.csv
+	rm -fv output/*/*.png
 
 .PHONY: all clean
 
