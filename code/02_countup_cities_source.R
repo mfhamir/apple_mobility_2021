@@ -24,4 +24,3 @@ for (state in the_state) {
      state_to_subset = state
 )
 }
-
