@@ -12,7 +12,7 @@ library("dplyr")
 source("code/functions/tally_state_cities_counties.R")
 
 # use function in for loop
-the_state <- c("Alabama","Maryland", "Idaho", "Arizona", "Iowa")
+the_state <- c("Alabama", "Maryland", "Idaho", "Arizona", "Iowa")
 
 # test out the use of the function
 for (state in the_state) {
