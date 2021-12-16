@@ -16,7 +16,7 @@ library("readr")
 
 # load in the dataset from the previous script
 tally_state_cities_counties <- function(input_state_file,
-					state_to_subset) {
+                                        state_to_subset) {
 
   state_data <- readr::read_csv(input_state_file)
 
