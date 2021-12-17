@@ -8,10 +8,11 @@
 # mfhamir@dons.usfca.edu
 # Sept 20th, 2021
 
-# function
-subset_mobility_data_to_state(
-  input_file_name = "data/raw_data/applemobilitytrends-2021-09-19.csv",
-  state_to_subset = "Alabama")
+#Load functions
+source("code/functions/subset_mobility_data_to_state.R")
+
+# assign input file name
+input_file_name <- "data/raw_data/applemobilitytrends-2021-09-26.csv"
 
 # use function within a for loop
 for (my_state in c("Alabama", "Maryland", "Idaho", "Arizona", "Iowa")) {
