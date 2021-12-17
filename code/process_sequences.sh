@@ -8,7 +8,6 @@
 # November 08 2021
 
 # The data file we will analyze
-
 if [ $# -eq 0 ]
 then
   echo "Supply the path to the gzip compressed SARS-Cov2 fasta file"
@@ -21,16 +20,16 @@ fi
 # sequence count.
 if [[ $# -eq 1 ]]
 then
-  echo "count of sequences per country, sorted from the greatest to least"
   bioawk -c fastx '{print $comment}' "$1" | cut -d "|" -f 21 | sort | uniq -c | sort -n -r
   exit 0
-fi
-
-if [ $# -eq 2 ] && [ "$2" = "ALL" ]
+elif [ $# -eq 2 ] && [ "$2" = "ALL" ]
 then
   echo "The total number sequences in the file:"
   bioawk -c fastx '{print $name $comment}' "$1" | wc -l
-  echo "This would be the total number of Sars-Cov-2 sequences per country, this will be"
+  echo "This would be the total count of Sars-Cov-2 sequences per country, largest to smallest"
   bioawk -c fastx '{print $comment}' "$1" | cut -d "|" -f 21 | sort | uniq -c | sort -n -r
   exit 0
+else
+  echo "ERROR: Check your spelling/ capitalizations of 'ALL' to process additional data"
+  exit 1
 fi
